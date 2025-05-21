@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// 👇 Define it here so it can be reused in the reset function
+// initia state ah intha mari uhm vachhukkalam..
 const initialState = { value: "rahmath" };
 
 const testSlice = createSlice({
     name:"test", // ithu vanthu intha slice file kana name..
     initialState:{value:"rahmath"},
-    reducers:{
+    reducers:{ // we create a functions inside it..
         updateText:(state, action) =>{
           state.value = action.payload // na click pannupothu , intha function oda payload la pass pandratha , state value va update pandren..
         },
@@ -15,9 +15,9 @@ const testSlice = createSlice({
         }
     }
 })
-// exporting the reducer
-export default testSlice.reducer;
+// export the entire slice file to pass in the store reducer , and also functons created .
+export default testSlice.reducer; // entire slice file na .reducer : nu export pannanum , then provide it to store.js
 
-export const {updateText , reset} = testSlice.actions; // this is a way of exporting a function..
+export const {updateText , reset} = testSlice.actions; // function na : . actions nu export pannanum
 
 
